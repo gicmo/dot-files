@@ -17,7 +17,7 @@
     "^_"        = "undo:";                          /* C-_          Undo */
     "^ "        = "setMark:";                       /* C-Spc        Set mark */
     "^\@"       = "setMark:";                       /* C-@          Set mark */
-    "^w"        = "deleteToMark:";                  /* C-w          Delete to mark */
+    "^w"        = ("copy:", "deleteToMark:");       /* C-w          Delete to mark */
 
     "^g"        = "cancleOperation:";               /* C-g          Cancel operation (or dialog) */
 
