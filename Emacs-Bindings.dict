@@ -28,29 +28,29 @@
 
 
     /* Meta shortcuts */
-    "~f"        = "moveWordForward:";               /* M-f          Move forward word */
-    "~b"        = "moveWordBackward:";              /* M-b          Move backward word */
-    "~<"        = "moveToBeginningOfDocument:";     /* M-<          Move to beginning of document */
-    "~>"        = "moveToEndOfDocument:";           /* M->          Move to end of document */
-    "~v"        = "pageUp:";                        /* M-v          Page Up */
-    "~/"        = "complete:";                      /* M-/          Complete */
-    "~c"        = ( "capitalizeWord:",              /* M-c          Capitalize */
+    "~f"        = "moveWordForward:";               /* M-f          Move forward word [ƒ] */
+    "~b"        = "moveWordBackward:";              /* M-b          Move backward word [ŭ|u]*/
+    "~<"        = "moveToBeginningOfDocument:";     /* M-<          Move to beginning of document [≤] */
+    "~>"        = "moveToEndOfDocument:";           /* M->          Move to end of document [≥] */
+    "~v"        = "pageUp:";                        /* M-v          Page Up [ǔ|u] */
+    "~/"        = "complete:";                      /* M-/          Complete [÷]*/
+    "~c"        = ( "capitalizeWord:",              /* M-c          Capitalize [ç|c]*/
                     "moveForward:",
                     "moveForward:");
-    "~u"        = ( "uppercaseWord:",               /* M-u          Uppercase */
+    "~u"        = ( "uppercaseWord:",               /* M-u          Uppercase [ü|u] */
                     "moveForward:",
                     "moveForward:");
-    "~l"        = ( "lowercaseWord:",               /* M-l          Lowercase */
+    "~l"        = ( "lowercaseWord:",               /* M-l          Lowercase [ʉ|u] */
                     "moveForward:",
                     "moveForward:");
-    "~d"        = "deleteWordForward:";             /* M-d          Delete word forward */
-    "^~h"       = "deleteWordBackward:";            /* M-C-h        Delete word backward */
-    "~\U007F"   = "deleteWordBackward:";            /* M-Bksp       Delete word backward */
-    "~t"        = "transposeWords:";                /* M-t          Transpose words */
-    "~\@"       = ( "setMark:",                     /* M-@          Mark word */
+    "~d"        = "deleteWordForward:";             /* M-d          Delete word forward [ð] */
+    "^~h"       = "deleteWordBackward:";            /* M-C-h        Delete word backward [] */
+    "~\U007F"   = "deleteWordBackward:";            /* M-Bksp       Delete word backward [<backspace>] */
+    "~t"        = "transposeWords:";                /* M-t          Transpose words [þ] */
+    "~\@"       = ( "setMark:",                     /* M-@          Mark word [€] */
                     "moveWordForward:",
                     "swapWithMark");
-    "~h"        = ( "setMark:",                     /* M-h          Mark paragraph */
+    "~h"        = ( "setMark:",                     /* M-h          Mark paragraph [ẖ|h] */
                     "moveToEndOfParagraph:",
                     "swapWithMark");
 
