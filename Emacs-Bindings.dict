@@ -23,6 +23,7 @@
 
 
     /* Meta shortcuts */
+    "~w"        = "copy:";                          /* M-w          Copy to pasteboard [ẇ|w]
     "~f"        = "moveWordForward:";               /* M-f          Move forward word [ƒ] */
     "~b"        = "moveWordBackward:";              /* M-b          Move backward word [ŭ|u]*/
     "~<"        = "moveToBeginningOfDocument:";     /* M-<          Move to beginning of document [≤] */
