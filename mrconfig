@@ -1,0 +1,12 @@
+[homeshick]
+checkout = git clone git://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
+
+[files]
+checkout = git clone git@github.com:gicmo/dot-files.git files
+
+[emacs]
+checkout = git clone git@github.com:gicmo/dot-emacs.git emacs
+
+[zsh]
+checkout = git clone --recursive git@github.com:gicmo/do-zsh.git zsh
+
