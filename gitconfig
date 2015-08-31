@@ -1,0 +1,34 @@
+[user]
+	name = Christian Kellner
+	email = christian@kellner.me
+	SigningKey = 64E876E00BC901FF
+
+
+[mergetool]
+	keepBackup = false
+
+[color]
+	ui = true
+	interactive = auto
+
+[color "status"]
+       added = blue
+       changed = red
+       untracked = magenta
+
+[alias]
+	d = diff --color-word
+	ll = log --stat --abbrev-commit
+	ls = log --oneline --graph --all --decorate --abbrev-commit
+	s = status -sb
+	co = checkout
+
+[core]
+	editor = /usr/bin/vim
+
+[push]
+	default = simple
+
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
