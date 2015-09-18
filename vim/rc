@@ -1,0 +1,25 @@
+
+source $HOME/.vim/plugins.vim
+
+set nocompatible
+set encoding=utf-8
+set t_Co=256
+
+set background=dark
+colorscheme lucius
+set laststatus=2
+
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set smarttab
+set autoindent
+
+
+let g:airline_powerline_fonts = 3
+if has('gui_running')
+    let g:airline#extensions#tabline#enabled = 3
+    set gfn=source\ code\ pro\ for\ powerline:h11
+    set guioptions-=T
+endif
