@@ -29,6 +29,9 @@
 [push]
 	default = simple
 
+[diff]
+    mnemonicprefix = true
+
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
