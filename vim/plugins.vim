@@ -13,5 +13,8 @@ Plug 'tomasr/molokai'
 Plug 'jonathanfilip/vim-lucius'
 Plug 'bling/vim-airline'
 
+" coding
+Plug 'editorconfig/editorconfig-vim'
+
 
 call plug#end()
