@@ -1,3 +1,4 @@
+" vim main config file
 
 source $HOME/.vim/plugins.vim
 
@@ -23,3 +24,5 @@ if has('gui_running')
     set gfn=source\ code\ pro\ for\ powerline:h11
     set guioptions-=T
 endif
+
+" vim: set filetype=vim : 
