@@ -17,6 +17,8 @@ set shiftwidth=4
 set smarttab
 set autoindent
 
+set incsearch
+set hlsearch
 
 let g:airline_powerline_fonts = 3
 if has('gui_running')
