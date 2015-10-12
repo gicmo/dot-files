@@ -16,5 +16,7 @@ Plug 'bling/vim-airline'
 " coding
 Plug 'editorconfig/editorconfig-vim'
 
+" blitz-open
+Plug 'kien/ctrlp.vim'
 
 call plug#end()
