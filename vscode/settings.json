@@ -14,5 +14,8 @@
     "go.useCodeSnippetsOnFunctionSuggest": false,
     "go.formatOnSave": true,
     "go.formatTool": "goreturns",
-    "go.gopath": "/Users/gicmo/Coding/go"
+    "go.gopath": "/Users/gicmo/Coding/go",
+    
+    // python
+    "python.pythonPath": "/usr/local/bin/python"
 }
