@@ -37,7 +37,7 @@
   {"key":"ctrl+p",        "command":"workbench.action.quickOpenNavigatePrevious", "when":"inQuickOpen"},
   {"key":"alt+g g",       "command":"workbench.action.gotoLine"},
   {"key":"ctrl+n",        "command":"deleteWordLeft", "when":"editorTextFocus"},
-  {"key":"ctrl+k",        "command":"editor.action.clipboardCutAction", "when":"editorTextFocus"},
+  {"key":"ctrl+k",        "command":"deleteAllRight", "when":"editorTextFocus"},
   {"key":"alt+w",         "command":"editor.action.clipboardCopyAction", "when":"editorTextFocus"},
   {"key":"ctrl+w",        "command":"editor.action.clipboardCutAction", "when":"editorTextFocus"},
   {"key":"ctrl+y",        "command":"editor.action.clipboardPasteAction", "when":"editorTextFocus"},
