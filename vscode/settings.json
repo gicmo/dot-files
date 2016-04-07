@@ -1,4 +1,4 @@
-// Place your settings in this file to overwrite the default settings
+// Users settings CK
 {
     "editor.fontFamily": "Hasklig",
     "editor.fontSize": 12,
@@ -18,6 +18,6 @@
     "go.formatTool": "goreturns",
     "go.gopath": "/Users/gicmo/Coding/go",
     
-    // python
+    // python 
     "python.pythonPath": "/usr/local/bin/python"
 }
