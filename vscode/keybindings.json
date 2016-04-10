@@ -43,7 +43,7 @@
   {"key":"alt+w",         "command":"editor.action.clipboardCopyAction", "when":"editorTextFocus"},
   {"key":"ctrl+w",        "command":"editor.action.clipboardCutAction", "when":"editorTextFocus"},
   {"key":"ctrl+y",        "command":"editor.action.clipboardPasteAction", "when":"editorTextFocus"},
-  {"key":"alt+x",         "command":"workbench.action.showCommands"},
+  {"key":"alt+x",         "command":"workbench.action.quickOpen"},
   {"key":"ctrl+n",        "command":"showNextParameterHint", "when":"editorTextFocus && parameterHintsVisible"},
   {"key":"ctrl+p",        "command":"showPrevParameterHint", "when":"editorTextFocus && parameterHintsVisible"},
   {"key":"ctrl+v",        "command":"selectNextPageQuickFix", "when":"editorFocus && quickFixWidgetVisible"},
