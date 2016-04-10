@@ -69,5 +69,6 @@
   {"key":"alt+shift+8",   "command":"workbench.action.navigateBack"},
   {"key":"ctrl+c ctrl+r", "command":"editor.action.rename", "when":"editorTextFocus"},
   {"key":"ctrl+c ctrl+shift+,", "command": "editor.action.selectHighlights", "when": "editorFocus"},
-  {"key":"ctrl+c d", "command": "extension.dash.specific", "when": "editorTextFocus"}
+  {"key":"ctrl+c d",      "command": "extension.dash.specific", "when": "editorTextFocus"},
+  {"key":"alt+enter",     "command": "editor.action.quickFix", "when": "editorTextFocus"}
 ]
