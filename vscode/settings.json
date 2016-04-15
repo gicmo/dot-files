@@ -3,7 +3,7 @@
     "editor.fontFamily": "Hasklig",
     "editor.fontSize": 12,
     "editor.fontLigatures": true,
-    "editor.insertSpaces": "auto",
+    "editor.detectIndentation": true,
     
     // go
     "go.buildOnSave": true,
