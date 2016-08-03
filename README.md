@@ -8,8 +8,11 @@ Quick start
 -----------
 
 ```sh
-# install myrepos via homebrew
+# Mac: install myrepos via homebrew
 brew install myrepos
+
+# Fedora:
+sudo dnf install myrepos
 
 # clone all repos to ~/.homesick/repos
 mr --trust-all bootstrap https://raw.githubusercontent.com/gicmo/dot-files/master/mrconfig  ~/.homesick/repos
