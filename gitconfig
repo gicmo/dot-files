@@ -30,7 +30,8 @@
 	default = simple
 
 [diff]
-    mnemonicprefix = true
+	mnemonicprefix = true
+	compactionHeuristic = true
 
 [filter "media"]
 	clean = git-media-clean %f
