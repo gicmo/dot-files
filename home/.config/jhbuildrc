@@ -1,0 +1,14 @@
+# -*- mode: python -*-
+# -*- coding: utf-8 -*-
+
+repos['git.gnome.org'] = 'ssh://gicmo@git.gnome.org/git/'
+checkoutroot = '~/Coding/GNOME'
+prefix = '/opt/GNOME'
+
+# os.environ['CFLAGS'] = '-Wall -g -O0'
+
+# to speed up builds of GNOME, try '--disable-static --disable-gtk-doc'
+#autogenargs=''
+
+# Set makeargs to 'V=1' for verbose build output.
+#makeargs = ''
