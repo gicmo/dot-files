@@ -36,3 +36,10 @@
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
+[bz]
+	browser = chromium
+	default-tracker = gnome
+
+[bz-tracker "gnome"]
+	host = bugzilla.gnome.org
+	auth-user = gicmo@gnome.org
