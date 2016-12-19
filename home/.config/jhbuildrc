@@ -1,9 +1,9 @@
 # -*- mode: python -*-
 # -*- coding: utf-8 -*-
 
-repos['git.gnome.org'] = 'ssh://gicmo@git.gnome.org/git/'
-checkoutroot = '~/Coding/GNOME'
-prefix = '/opt/GNOME'
+#repos['git.gnome.org'] = 'ssh://gicmo@git.gnome.org/git/'
+checkoutroot = '~/Code/gnome'
+prefix = '/opt/gnome'
 
 # os.environ['CFLAGS'] = '-Wall -g -O0'
 
