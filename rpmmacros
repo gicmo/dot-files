@@ -1,0 +1,2 @@
+# mkdir -p ~/Code/rpm/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
+%_topdir %(echo $HOME)/Code/rpm
