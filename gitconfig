@@ -37,7 +37,7 @@
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 [bz]
-	browser = chromium
+	browser = firefox3
 	default-tracker = gnome
 
 [bz-tracker "gnome"]
