@@ -3,6 +3,8 @@
 	email = christian@kellner.me
 	SigningKey = 64E876E00BC901FF
 
+[user "redhat"]
+      email = ckellner@redhat.com
 
 [mergetool]
 	keepBackup = false
@@ -43,3 +45,14 @@
 [bz-tracker "gnome"]
 	host = bugzilla.gnome.org
 	auth-user = gicmo@gnome.org
+
+[sendemail "redhat"]
+	from = Christian Kellner <ckellner@redhat.com>
+	smtpServer =  smtp.corp.redhat.com
+
+[imap]
+	folder = "Drafts"
+    	host = imaps://imap.fastmail.com
+    	user = christian@kellner.me
+    	port = 993
+    	sslverify = false
