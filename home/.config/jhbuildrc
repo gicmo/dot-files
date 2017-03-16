@@ -1,18 +1,1 @@
-# -*- mode: python -*-
-# -*- coding: utf-8 -*-
-from distutils import spawn
-
-#repos['git.gnome.org'] = 'ssh://gicmo@git.gnome.org/git/'
-checkoutroot = '~/Code/gnome'
-prefix = '/opt/gnome'
-
-os.environ['CFLAGS'] = '-Wall -g -O0'
-if spawn.find_executable('cdcc-gcc') is not None:
-    os.environ['CC'] = 'cdcc-gcc'
-    os.environ['CXX'] = 'cdcc-g++'
-
-# to speed up builds of GNOME, try '--disable-static --disable-gtk-doc'
-#autogenargs=''
-
-# Set makeargs to 'V=1' for verbose build output.
-#makeargs = ''
+../../jhbuildrc
