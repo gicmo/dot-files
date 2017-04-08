@@ -196,29 +196,6 @@ EXEC 31  # Unix
 .Z    32
 .zip  32
 
-
-# Testing {{{
-
-.ANSI-black 30
-.ANSI-black-bright 30
-.ANSI-red 31
-.ANSI-red-bright 01;31
-.ANSI-green 32
-.ANSI-green-bright 01;32
-.ANSI-yellow 33
-.ANSI-yellow-bright 01;33
-.ANSI-blue 34
-.ANSI-blue-bright 01;34
-.ANSI-magenta 35
-.ANSI-magenta-bright 01;35
-.ANSI-cyan 36
-.ANSI-cyan-bright 01;36
-.ANSI-white 37
-.ANSI-white-bright 01;37
-
-# }}}
-# Custom {{{
-
 # Unimportant text files
 *# 32
 *~ 32
