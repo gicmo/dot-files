@@ -143,88 +143,8 @@ EXEC 31  # Unix
 
 # }}}
 
-# Image {{{
-.bmp 01;35
-.cgm 01;35
-.dl 01;35
-.dvi 01;35
-.emf 01;35
-.eps 01;35
-.gif 01;35
-.jpeg 01;35
-.jpg 01;35
-.JPG 01;35
-.mng 01;35
-.pbm 01;35
-.pcx 01;35
-.pdf 01;35
-.pgm 01;35
-.png 01;35
-.ppm 01;35
-.pps 01;35
-.ppsx 01;35
-.ps 01;35
-.svg 01;35
-.svgz 01;35
-.tga 01;35
-.tif 01;35
-.tiff 01;35
-.xbm 01;35
-.xcf 01;35
-.xpm 01;35
-.xwd 01;35
-.xwd 01;35
-.yuv 01;35
 
-# }}}
-# Audio {{{
-
-.aac 01;35
-.au  01;35
-.flac 01;35
-.mid 01;35
-.midi 01;35
-.mka 01;35
-.mp3 01;35
-.mpa 01;35
-.mpeg 01;35
-.mpg 01;35
-.ogg  01;35
-.ra 01;35
-.wav 01;35
-
-# }}}
-# Video {{{
-
-.anx 01;35
-.asf 01;35
-.avi 01;35
-.axv 01;35
-.flc 01;35
-.fli 01;35
-.flv 01;35
-.gl 01;35
-.m2v 01;35
-.m4v 01;35
-.mkv 01;35
-.mov 01;35
-.mp4 01;35
-.mp4v 01;35
-.mpeg 01;35
-.mpg 01;35
-.nuv 01;35
-.ogm 01;35
-.ogv 01;35
-.ogx 01;35
-.qt 01;35
-.rm 01;35
-.rmvb 01;35
-.swf 01;35
-.vob 01;35
-.wmv 01;35
-
-# }}}
-# Documents {{{
+# Documents
 
 .doc 33
 .docx 33
@@ -238,42 +158,42 @@ EXEC 31  # Unix
 .fla 33
 .psd 33
 
-# }}}
-# Archives {{{
 
-.7z   1;35
-.apk  1;35
-.arj  1;35
-.bin  1;35
-.bz   1;35
-.bz2  1;35
-.cab  1;35  # Win
-.deb  1;35
-.dmg  1;35  # OSX
-.gem  1;35
-.gz   1;35
-.iso  1;35
-.jar  1;35
-.msi  1;35  # Win
-.rar  1;35
-.rpm  1;35
-.tar  1;35
-.tbz  1;35
-.tbz2 1;35
-.tgz  1;35
-.tx   1;35
-.war  1;35
-.xpi  1;35
-.xz   1;35
-.z    1;35
-.Z    1;35
-.zip  1;35
+# Archives
 
-# }}}
+.7z   35
+.apk  35
+.arj  35
+.bin  35
+.bz   35
+.bz2  35
+.cab  35  # Win
+.deb  35
+.dmg  35  # OSX
+.gem  35
+.gz   35
+.iso  35
+.jar  35
+.msi  35  # Win
+.rar  35
+.rpm  35
+.tar  35
+.tbz  35
+.tbz2 35
+.tgz  35
+.tx   35
+.war  35
+.xpi  35
+.xz   35
+.z    35
+.Z    35
+.zip  35
+
+
 # Testing {{{
 
 .ANSI-black 30
-.ANSI-black-bright 01;30
+.ANSI-black-bright 30
 .ANSI-red 31
 .ANSI-red-bright 01;31
 .ANSI-green 32
