@@ -161,33 +161,33 @@ EXEC 31  # Unix
 
 # Archives
 
-.7z   35
-.apk  35
-.arj  35
-.bin  35
-.bz   35
-.bz2  35
-.cab  35  # Win
-.deb  35
-.dmg  35  # OSX
-.gem  35
-.gz   35
-.iso  35
-.jar  35
-.msi  35  # Win
-.rar  35
-.rpm  35
-.tar  35
-.tbz  35
-.tbz2 35
-.tgz  35
-.tx   35
-.war  35
-.xpi  35
-.xz   35
-.z    35
-.Z    35
-.zip  35
+.7z   32
+.apk  32
+.arj  32
+.bin  32
+.bz   32
+.bz2  32
+.cab  32  # Win
+.deb  32
+.dmg  32  # OSX
+.gem  32
+.gz   32
+.iso  32
+.jar  32
+.msi  32  # Win
+.rar  32
+.rpm  32
+.tar  32
+.tbz  32
+.tbz2 32
+.tgz  32
+.tx   32
+.war  32
+.xpi  32
+.xz   32
+.z    32
+.Z    32
+.zip  32
 
 
 # Testing {{{
