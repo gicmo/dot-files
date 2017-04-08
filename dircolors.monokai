@@ -1,27 +1,7 @@
 # Monokai color theme for the color GNU ls utility.
 # Designed for dircolors (GNU coreutils) 5.97
 #
-# This file was largely inspired by seebi/dircolors-solarized on github.
-#
-# How the colors were selected:
-# - Terminal emulators often have an option typically enabled by default that makes
-#   bold a different color.  It is important to leave this option enabled so that
-#   you can access the entire 16-color palette, and not just 8 colors.
-# - We favor universality over a greater number of colors.  So we limit the number
-#   of colors so that this theme will work out of the box in all terminals.
-# - We choose to have the following category of files:
-#   NORMAL & FILE, DIR, LINK, EXEC and
-#   editable text including source, unimportant text, binary docs & multimedia source
-#   files, viewable multimedia, archived/compressed, and unimportant non-text
-# - See table below to see the assignments.
-
-
-# Installation instructions
-# This file goes in the /etc directory, and must be world readable.
-# You can copy this file to .dir_colors in your $HOME directory to override
-# the system defaults.
-
-# Init {{{
+# Based on seebi/dircolors-solarized and jtheoof/dotfiles on github.
 
 # COLOR needs one of these arguments: 'tty' colorizes output to ttys, but not
 # pipes. 'all' adds color characters to all output. 'none' shuts colorization
@@ -118,17 +98,11 @@ EIGHTBIT 1
 #   01;37 bright white    bright white
 #   05;37;41
 
-# }}}
-# File type {{{
-
-# global default
+# file type
 NORMAL 00
-# normal file
-FILE 00
-# directory
-DIR 36
-# symbolic link
-LINK 35
+FILE   00
+DIR    34
+LINK   36
 
 # pipe, socket, block device, character device (blue bg)
 FIFO 37;44
@@ -137,8 +111,7 @@ DOOR 37;44 # Solaris 2.5 and later
 BLK  37;44
 CHR  37;44
 
-# }}}
-# File attributes {{{
+# File attributes
 
 # Orphaned symlinks (blinking white on red)
 # Blink may or may not work (works on iTerm dark or light, and Putty dark)
@@ -159,7 +132,6 @@ EXEC 01;31  # Unix
 .reg 01;31  # Win
 .app 01;31  # OSX
 
-# }}}
 # File extension {{{
 
 # List any file extensions like '.gz' or '.tar' that you would like ls
