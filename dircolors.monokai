@@ -196,12 +196,9 @@ EXEC 31  # Unix
 .Z    32
 .zip  32
 
-# Unimportant text files
-*# 32
-*~ 32
-.log 32
-
-# Unimportant non-text files
+# less important files
+*# 01;30
+*~ 01;30
 *,v 01;30
 .BAK 01;30
 .DIST 01;30
