@@ -143,6 +143,13 @@ EXEC 31  # Unix
 
 # }}}
 
+# Build system
+.build 32
+.meson 32
+.spec  32
+.ac    32
+.am    32
+*CMakeLists.txt 32
 
 # Documents
 
