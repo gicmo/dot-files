@@ -120,13 +120,13 @@ STICKY_OTHER_WRITABLE 31;46 # (+t,o+w)
 OTHER_WRITABLE        31;46 # (o+w)
 
 # files with execute permission
-EXEC 01;31  # Unix
-.cmd 01;31  # Win
-.exe 01;31  # Win
-.com 01;31  # Win
-.bat 01;31  # Win
-.reg 01;31  # Win
-.app 01;31  # OSX
+EXEC 31  # Unix
+.cmd 31  # Win
+.exe 31  # Win
+.com 31  # Win
+.bat 31  # Win
+.reg 31  # Win
+.app 31  # OSX
 
 # File extension {{{
 
