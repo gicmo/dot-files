@@ -56,3 +56,6 @@
     	user = christian@kellner.me
     	port = 993
     	sslverify = false
+
+[url "git@github.com:gicmo/"]
+	insteadOf = gicmo@gh:
