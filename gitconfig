@@ -65,3 +65,6 @@
 
 [url "ssh://gicmo@git.gnome.org/git/"]
 	insteadOf = gicmo@gnome:
+
+[url "git@github.com:G-Node/"]
+	insteadOf = gnode:
