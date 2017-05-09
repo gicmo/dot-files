@@ -12,7 +12,7 @@ if spawn.find_executable('cdcc-gcc') is not None:
     os.environ['CXX'] = 'cdcc-g++'
 
 # to speed up builds of GNOME, try '--disable-static --disable-gtk-doc'
-#autogenargs=''
+autogenargs='--disable-static --disable-gtk-doc'
 
 # Set makeargs to 'V=1' for verbose build output.
 #makeargs = ''
