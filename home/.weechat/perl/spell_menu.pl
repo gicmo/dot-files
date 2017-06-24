@@ -1,0 +1,1 @@
+../../../weechat/perl/spell_menu.pl
