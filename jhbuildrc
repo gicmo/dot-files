@@ -14,5 +14,7 @@ if spawn.find_executable('cdcc-gcc') is not None:
 # to speed up builds of GNOME, try '--disable-static --disable-gtk-doc'
 autogenargs='--disable-static --disable-gtk-doc'
 
+skip = ['ModemManager', 'NetworkManager', 'WebKit', 'gstreamer', 'gst-plugins-base', 'gst-plugins-bad','gst-plugins-good', 'gst-libav']
+
 # Set makeargs to 'V=1' for verbose build output.
 #makeargs = ''
