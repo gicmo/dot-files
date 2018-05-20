@@ -1,0 +1,1 @@
+../../../weechat/python/wee_slack.py
