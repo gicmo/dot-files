@@ -10,5 +10,8 @@ checkout = git clone git@github.com:gicmo/dot-emacs.git emacs
 [zsh]
 checkout = git clone --recursive git@github.com:gicmo/dot-zsh.git zsh
 
+[fish]
+checkout = git clone --recursive git@github.com:gicmo/dot-fish.git fish
+
 [devel]
 checkout = git clone --recursive git@github.com:gicmo/dot-devel.git devel
