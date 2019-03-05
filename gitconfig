@@ -84,3 +84,5 @@
 	insteadOf = fdo:
 [gitlab "gitlab.freedesktop.org/api/v4"]
 	user = gicmo
+[gitlab "gitlab.gnome.org/api/v4"]
+	user = gicmo
