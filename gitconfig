@@ -82,3 +82,5 @@
 
 [url "git://anongit.freedesktop.org/"]
 	insteadOf = fdo:
+[gitlab "gitlab.freedesktop.org/api/v4"]
+	user = gicmo
