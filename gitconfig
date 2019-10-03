@@ -71,10 +71,10 @@
 [url "git@github.com:gicmo/"]
 	insteadOf = gicmo@gh:
 
-[url "git://git.gnome.org/"]
+[url "git@gitlab.gnome.org:GNOME/"]
 	insteadOf = gnome:
 
-[url "ssh://gicmo@git.gnome.org/git/"]
+[url "git@gitlab.gnome.org:gicmo/"]
 	insteadOf = gicmo@gnome:
 
 [url "git@github.com:G-Node/"]
