@@ -64,7 +64,6 @@
 
 [sendemail "redhat"]
 	from = Christian Kellner <ckellner@redhat.com>
-	smtpServer =  smtp.corp.redhat.com
 
 [imap]
 	folder = "Drafts"
