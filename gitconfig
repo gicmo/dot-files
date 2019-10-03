@@ -46,13 +46,6 @@
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
-[bz]
-	browser = firefox3
-	default-tracker = gnome
-
-[bz-tracker "gnome"]
-	host = bugzilla.gnome.org
-	auth-user = gicmo@gnome.org
 
 [sendmail]
 	annotate = true
