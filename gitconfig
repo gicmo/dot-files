@@ -80,7 +80,7 @@
 [url "git@github.com:G-Node/"]
 	insteadOf = gnode:
 
-[url "git://anongit.freedesktop.org/"]
+[url "git@gitlab.freedesktop.org:"]
 	insteadOf = fdo:
 
 [gitlab "gitlab.freedesktop.org/api/v4"]
