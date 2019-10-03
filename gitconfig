@@ -83,6 +83,9 @@
 [url "git@gitlab.freedesktop.org:"]
 	insteadOf = fdo:
 
+[url "git@gitlab.freedesktop.org:gicmo"]
+	insteadOf = gicmo@fdo:
+
 [gitlab "gitlab.freedesktop.org/api/v4"]
 	user = gicmo
 
