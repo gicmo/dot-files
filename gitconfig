@@ -54,6 +54,14 @@
 	host = bugzilla.gnome.org
 	auth-user = gicmo@gnome.org
 
+[sendmail]
+	annotate = true
+	multiEdit = true
+	confirm = auto
+	from = Christian Kellner <christian@kellner.me>
+	smtpServer = "/usr/bin/msmtp"
+	smtpServerOption = "--read-envelope-from"
+
 [sendemail "redhat"]
 	from = Christian Kellner <ckellner@redhat.com>
 	smtpServer =  smtp.corp.redhat.com
