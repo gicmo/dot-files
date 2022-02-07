@@ -93,3 +93,5 @@
 
 [gitlab "gitlab.gnome.org/api/v4"]
 	user = gicmo
+[pull]
+	rebase = true
