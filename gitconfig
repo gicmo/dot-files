@@ -37,6 +37,8 @@
 	default = simple
 
 [diff]
+	colorMoved = default
+	colorMovedWs = ignore-all-space
 	mnemonicprefix = true
 	compactionHeuristic = true
 
