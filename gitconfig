@@ -43,6 +43,7 @@
 	compactionHeuristic = true
 
 [rebase]
+	autostash = true
 	autosquash = true
 
 [filter "media"]
