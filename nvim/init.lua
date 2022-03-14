@@ -16,7 +16,10 @@ vim.cmd [[
 
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim' -- Package manager
-    
+
+  -- git 
+  use 'tpope/vim-fugitive'
+
   -- themes
   use 'arcticicestudio/nord-vim'
 end)
