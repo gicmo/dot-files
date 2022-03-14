@@ -16,6 +16,9 @@ vim.cmd [[
 
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim' -- Package manager
+    
+  -- themes
+  use 'arcticicestudio/nord-vim'
 end)
 
 -- editor
@@ -47,7 +50,7 @@ vim.o.wrap = false
 
 vim.cmd [[colorscheme nord]]
 
--- indenting
+-- identing
 vim.o.expandtab = true
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4
