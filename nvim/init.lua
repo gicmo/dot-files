@@ -17,6 +17,8 @@ vim.cmd [[
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim' -- Package manager
 
+  use 'editorconfig/editorconfig-vim'
+
   -- git 
   use 'tpope/vim-fugitive'
   use {
