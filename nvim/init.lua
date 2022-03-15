@@ -1,5 +1,22 @@
 -- NeoVim configuration
 
+-- plugins
+local packer_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
+
+if vim.fn.empty(vim.fn.glob(packer_path)) > 0 then
+  vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. packer_path)
+end
+
+vim.cmd [[
+  augroup Packer
+    autocmd!
+    autocmd BufWritePost init.lua PackerCompile
+  augroup end
+]]
+
+require('packer').startup(function(use)
+  use 'wbthomason/packer.nvim' -- Package manager
+end)
 
 -- editor
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
