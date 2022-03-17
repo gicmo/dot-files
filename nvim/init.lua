@@ -33,6 +33,10 @@ require('packer').startup(function(use)
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
 
+  -- treesitter
+  use 'nvim-treesitter/nvim-treesitter'
+  use 'nvim-treesitter/nvim-treesitter-textobjects'
+
   -- visuals
   use {
     'nvim-lualine/lualine.nvim',
@@ -199,3 +203,23 @@ require('lualine').setup {
   }
 }
 
+-- treesitter
+require('nvim-treesitter.configs').setup {
+  ensure_installed = "maintained",
+
+  highlight = {
+    enable = true,
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
+  indent = {
+    enable = true
+  },
+}
