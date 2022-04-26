@@ -30,6 +30,9 @@
 	pr-merge = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git merge pr/$1 --no-ff --edit -m 'Merge pull request #'$1; }; f"
 	pr-clean = "!git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
 
+[branch]
+	sort = -committerdate
+
 [core]
 	editor = /usr/bin/vim
 
