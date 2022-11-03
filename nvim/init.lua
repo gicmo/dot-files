@@ -56,6 +56,7 @@ vim.g.maplocalleader = ';'
 
 vim.o.encoding = "utf-8"
 vim.o.spell = true
+vim.o.spelloptions = 'camel,noplainbuffer'
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.undofile = true
