@@ -18,6 +18,9 @@ require('packer').startup(function(use)
   use 'wbthomason/packer.nvim' -- Package manager
 
   use 'editorconfig/editorconfig-vim'
+  
+  -- readline in insert and command mode
+  use 'tpope/vim-rsi'
 
   -- git 
   use 'tpope/vim-fugitive'
