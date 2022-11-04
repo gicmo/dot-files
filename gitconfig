@@ -39,6 +39,9 @@
 [commit]
 	verbose = true
 
+[pull]
+	rebase = true
+
 [push]
 	default = simple
 
@@ -100,5 +103,3 @@
 
 [gitlab "gitlab.gnome.org/api/v4"]
 	user = gicmo
-[pull]
-	rebase = true
