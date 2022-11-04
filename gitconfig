@@ -33,9 +33,6 @@
 [branch]
 	sort = -committerdate
 
-[core]
-	editor = /usr/bin/vim
-
 [commit]
 	verbose = true
 
