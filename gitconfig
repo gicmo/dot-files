@@ -17,9 +17,9 @@
 	interactive = auto
 
 [color "status"]
-       added = blue
-       changed = red
-       untracked = magenta
+    added = blue
+    changed = red
+    untracked = magenta
 
 [alias]
 	d = diff --color-word
