@@ -6,6 +6,9 @@
 [user "redhat"]
       email = ckellner@redhat.com
 
+[core]
+    excludesfile = ~/.gitignglb
+
 [mergetool]
 	keepBackup = false
 
