@@ -19,8 +19,10 @@ require('packer').startup(function(use)
 
   use 'editorconfig/editorconfig-vim'
   
+  -- navigation
   -- readline in insert and command mode
   use 'tpope/vim-rsi'
+  use 'tpope/vim-vinegar'
 
   -- git 
   use 'tpope/vim-fugitive'
