@@ -50,7 +50,8 @@ require('packer').startup(function(use)
   }
 
   -- themes
-  use 'arcticicestudio/nord-vim'
+  use 'ChristianChiarulli/nvcode-color-schemes.vim'
+
 end)
 
 -- editor
