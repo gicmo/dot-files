@@ -34,6 +34,8 @@ require('packer').startup(function(use)
     }
   }
 
+  use 'akinsho/git-conflict.nvim'
+
   -- lsp
   use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
@@ -125,6 +127,15 @@ require('gitsigns').setup {
     map('o', 'ih', ':<C-U>Gitsigns select_hunk<CR>')
     map('x', 'ih', ':<C-U>Gitsigns select_hunk<CR>')
   end
+}
+
+require('git-conflict').setup {
+  default_mappings = true,
+  disable_diagnostics = false,
+  highlights = {
+    incoming = 'DiffText',
+    current = 'DiffAdd',
+  }
 }
 
 -- lsp
