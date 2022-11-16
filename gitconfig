@@ -26,6 +26,7 @@
 	ll = log --stat --abbrev-commit
 	ls = log --oneline --graph --all --decorate --abbrev-commit
     s = status
+    su = status --untracked-files=normal
 	co = checkout
 
 	pr-fetch = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1; }; f"
