@@ -24,6 +24,15 @@ require('packer').startup(function(use)
   use 'tpope/vim-rsi'
   use 'tpope/vim-vinegar'
 
+  use {
+    'nvim-telescope/telescope.nvim', branch = '0.1.x',
+    requires = { 
+      {'nvim-telescope/telescope-fzy-native.nvim'},
+      {'nvim-lua/plenary.nvim'},
+      {'kyazdani42/nvim-web-devicons'}
+    } 
+  }
+
   -- git 
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
@@ -95,6 +104,37 @@ vim.o.smarttab = true
 vim.o.autoindent = true
 
 -- plugin configurations
+
+-- telescope
+
+require('telescope').setup {
+  defaults = {
+    prompt_prefix = "→ ",
+    selection_caret = "→ ",
+    selection_strategy = "reset",
+    sorting_strategy = "ascending",
+    scroll_strategy = "cycle",
+    color_devicons = true,
+    winblend = 0
+  },
+
+  extensions = {
+    fzy_native = {
+      override_file_sorter = true,
+      override_generic_sorter = true,
+    },
+
+    fzf_writer = {
+      use_highlighter = false,
+      minimum_grep_characters = 6,
+    }
+  },
+ }
+
+require('telescope').load_extension('fzy_native')
+
+local telescope = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', telescope.find_files, {})
 
 -- git
 require('gitsigns').setup {
