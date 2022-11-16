@@ -166,7 +166,7 @@ local on_attach = function(_, bufnr)
   map('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
   map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
   map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
-  map('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>')
+  map('n', '<leader>F', '<cmd>lua vim.lsp.buf.formatting()<CR>')
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
