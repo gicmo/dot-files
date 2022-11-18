@@ -42,7 +42,10 @@ require('packer').startup(function(use)
       'nvim-lua/plenary.nvim'
     }
   }
-
+  use { 
+    'TimUntersberger/neogit', 
+    requires = 'nvim-lua/plenary.nvim' 
+  }
   use 'akinsho/git-conflict.nvim'
 
   -- lsp
@@ -168,6 +171,22 @@ require('gitsigns').setup {
     map('x', 'ih', ':<C-U>Gitsigns select_hunk<CR>')
   end
 }
+
+neogit = require 'neogit'
+neogit.setup { 
+  disable_hint = true,
+  kind = "replace",
+  commit_popup = {
+    kind = "vsplit",
+  },
+  signs = {
+    section = { "▸", "▾" },
+    item = { "▸", "▾" },
+    hunk = { "", "" },
+  }
+}
+
+vim.keymap.set('n', '<leader>xg', neogit.status.create, {})
 
 require('git-conflict').setup {
   default_mappings = true,
