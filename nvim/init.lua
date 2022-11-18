@@ -48,6 +48,8 @@ require('packer').startup(function(use)
   }
   use 'akinsho/git-conflict.nvim'
 
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+
   -- lsp
   use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
@@ -183,6 +185,9 @@ neogit.setup {
     section = { "▸", "▾" },
     item = { "▸", "▾" },
     hunk = { "", "" },
+  },
+  integrations = {
+    diffview = true,
   }
 }
 
