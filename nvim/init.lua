@@ -54,6 +54,7 @@ require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+  use 'j-hui/fidget.nvim' -- Progress inidcator
 
   -- treesitter
   use 'nvim-treesitter/nvim-treesitter'
@@ -277,6 +278,8 @@ cmp.setup {
     { name = 'nvim_lsp' },
   },
 }
+
+require('fidget').setup {}
 
 require('lualine').setup {
   options = {
