@@ -109,6 +109,14 @@ vim.o.softtabstop = 4
 vim.o.smarttab = true
 vim.o.autoindent = true
 
+-- grepping
+if vim.fn.executable("rg") == 1 then
+  vim.o.grepprg = "rg --vimgrep --no-heading --color=never"
+  vim.o.grepformat = "%f:%l:%c:%m,%f:%l:%m"
+elseif vim.fn.executable("ag") == 1 then
+    o.grepprg = "ag --vimgrep --nogroup --nocolor"
+end
+
 -- plugin configurations
 
 -- telescope
