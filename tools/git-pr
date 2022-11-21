@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+checkout() {
+    git fetch -fu "${2:-origin}" "refs/pull/$1/head:pr/$1"
+    git checkout "pr/$1"
+}
+
+fetch() {
+    git fetch -fu "${2:-origin}" "refs/pull/$1/head:pr/$1"
+}
+
+merge() {
+    git fetch -fu "${2:-origin}" "refs/pull/$1/head:pr/$1"
+    git merge "pr/$1" --no-ff --edit -m "Merge pull request #$1"
+}
+
+clean() {
+    for ref in $(git for-each-ref refs/heads/pr/* --format="%(refname)"); do
+        branch=${ref#refs/heads/}
+        git branch -D "$branch"
+    done
+}
+
+usage() {
+    echo "git pr <subcommand> [number] [remote]"
+    echo
+    echo "subcommands"
+    echo "  checkout   Fetch a PR by number and switch to the new branch"
+    echo "  fetch      Fetch a PR by number"
+    echo "  merge      Merge a PR by number"
+    echo "  clean      Delete all local PR branches"
+}
+
+if (( $# == 0 )); then
+    usage
+    exit 1
+fi
+
+cmd="$1"
+shift
+args=("${@}")
+
+case "${cmd}" in
+    checkout)
+        checkout "${args[@]}"
+        ;;
+    fetch)
+        fetch "${args[@]}"
+        ;;
+    merge)
+        merge "${args[@]}"
+        ;;
+    clean)
+        clean "${args[@]}"
+        ;;
+    *)
+        echo "Unknown command ${cmd}"
+        usage
+        exit 1
+esac
