@@ -52,9 +52,11 @@ require('packer').startup(function(use)
 
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
+  -- autocompletion and snippets
+  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+  use {"L3MON4D3/LuaSnip", tag = "v1.*"}
   -- lsp
   use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
-  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
   use 'j-hui/fidget.nvim' -- Progress inidcator
 
@@ -276,6 +278,9 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+-- snippet
+local luasnip = require('luasnip')
+
 -- nvim-cmp setup
 local cmp = require 'cmp'
 cmp.setup {
@@ -304,6 +309,11 @@ cmp.setup {
         fallback()
       end
     end,
+  },
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end
   },
   sources = {
     { name = 'nvim_lsp' },
