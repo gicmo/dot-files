@@ -223,7 +223,7 @@ neogit.setup {
   }
 }
 
-vim.keymap.set('n', '<leader>xg', neogit.status.create, {})
+vim.keymap.set('n', '<leader>xg', '<cmd>Neogit<CR>', {})
 
 require('git-conflict').setup {
   default_mappings = true,
