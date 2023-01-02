@@ -55,6 +55,7 @@ require('packer').startup(function(use)
   -- autocompletion and snippets
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use {"L3MON4D3/LuaSnip", tag = "v1.*"}
+
   -- lsp
   use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
@@ -175,6 +176,7 @@ vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
 vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>",
   {silent = true, noremap = true}
 )
+
 -- git
 require('gitsigns').setup {
   on_attach = function(bufnr)
@@ -235,6 +237,7 @@ require('git-conflict').setup {
     current = 'DiffAdd',
   }
 }
+
 
 -- lsp
 vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
