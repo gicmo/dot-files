@@ -330,7 +330,7 @@ cmp.setup {
   },
 }
 
-require('fidget').setup {}
+require('fidget').setup()
 
 require('lualine').setup {
   options = {
