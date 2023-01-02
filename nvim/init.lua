@@ -268,6 +268,13 @@ local on_attach = function(_, bufnr)
   map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
   map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
   map('n', '<leader>F', '<cmd>lua vim.lsp.buf.formatting()<CR>')
+
+end
+
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " } 
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl= hl, numhl = hl })
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
