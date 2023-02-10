@@ -6,11 +6,11 @@ import tempfile
 
 
 REPOS = {
-    "devel": "https://github.com/gicmo/dot-devel.git",
-    "emacs": "https://github.com/gicmo/dot-emacs.git",
-    "files": "https://github.com/gicmo/dot-files.git",
-    "fish": "https://github.com/gicmo/dot-fish.git",
-    "homeshick": "git://github.com/andsens/homeshick.git"
+    "devel": "gicmo/dot-devel.git",
+    "emacs": "gicmo/dot-emacs.git",
+    "files": "gicmo/dot-files.git",
+    "fish": "gicmo/dot-fish.git",
+    "homeshick": "andsens/homeshick.git"
 }
 
 
@@ -21,6 +21,12 @@ homeshick -b -f link
 
 
 def clone(repo, dest):
+
+    if repo.startswith("gicmo"):
+        repo = f"git@github.com:{repo}"
+    else:
+        repo = f"https://github.com/{repo}"
+
     subprocess.run(["git", "clone", "--recursive", repo, dest],
                    check=True)
 
