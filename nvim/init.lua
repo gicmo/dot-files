@@ -188,10 +188,12 @@ require("lazy").setup({
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
+      "onsails/lspkind.nvim",
       "saadparwaiz1/cmp_luasnip",
     },
     opts = function() 
       local cmp = require 'cmp'
+      local lspkind = require("lspkind")
       return {
         mapping = {
           ['<Up>'] = cmp.mapping.select_prev_item(select_opts),
@@ -226,18 +228,10 @@ require("lazy").setup({
           documentation = cmp.config.window.bordered()
         },
         formatting = {
-          fields = {'menu', 'abbr', 'kind'},
-          format = function(entry, item)
-            local menu_icon = {
-              nvim_lsp = 'λ',
-              luasnip = '⋗',
-              buffer = 'Ω',
-              path = '_',
-            }
-
-            item.menu = menu_icon[entry.source.name]
-            return item
-          end,
+          format = lspkind.cmp_format({
+                    maxwidth = 50,
+                    ellipsis_char = "...",
+          }),
         },
         snippet = {
           expand = function(args)
@@ -249,7 +243,11 @@ require("lazy").setup({
           { name = 'buffer' },
         },
         window = {
-          documentation = cmp.config.window.bordered()
+          documentation = cmp.config.window.bordered(),
+          completion = cmp.config.window.bordered({
+            winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+          }),
+          scrollbar = false,
         },
       }
     end
