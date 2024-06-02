@@ -21,12 +21,30 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- main colorscheme
   {
-    'ChristianChiarulli/nvcode-color-schemes.vim',
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
+    "scottmckendry/cyberdream.nvim",
+    dependencies = {
+      {"nvim-lualine/lualine.nvim"},
+    },
+    lazy = false,
+    priority = 1000,
     config = function()
-      -- load the colorscheme here
-      vim.cmd([[colorscheme nord]])
+      require("cyberdream").setup({
+        transparent = true,
+        italic_comments = true,
+        hide_fillchars = true,
+        borderless_telescope = false,
+        terminal_colors = true,
+      })
+      local cyberdream = require("lualine.themes.cyberdream")
+      require("lualine").setup({
+        dependencies = {
+          'kyazdani42/nvim-web-devicons',
+        },
+        options = {
+          theme = "cyberdream",
+        },
+      })
+        vim.cmd("colorscheme cyberdream")
     end,
   },
 
@@ -371,19 +389,8 @@ require("lazy").setup({
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
     end
-  },
+  }
 
-  -- visuals / ui
-  {
-    'nvim-lualine/lualine.nvim',
-    dependencies = {
-      'kyazdani42/nvim-web-devicons',
-    },
-    opts = {
-      theme = 'nord' 
-    }
-  },
- 
 })
 
 vim.o.encoding = "utf-8"
