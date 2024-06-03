@@ -407,6 +407,9 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- visuals
+vim.o.nu = true
+vim.o.relativenumber = true
+
 vim.o.modeline = true
 vim.o.ruler = true
 vim.o.showmatch = true
