@@ -414,7 +414,8 @@ vim.o.signcolumn = "yes"
 vim.o.termguicolors = true
 vim.o.wrap = false
 
--- identing
+
+-- indenting
 vim.o.expandtab = true
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4
