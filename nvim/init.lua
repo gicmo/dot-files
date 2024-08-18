@@ -394,6 +394,17 @@ require("lazy").setup({
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
     end
+  },
+
+  -- markdown
+  {
+    'MeanderingProgrammer/markdown.nvim',
+    main = "render-markdown",
+    opts = {},
+    dependencies = { 
+      'nvim-treesitter/nvim-treesitter',
+      'echasnovski/mini.icons' 
+    },
   }
 
 })
