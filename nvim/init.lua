@@ -87,8 +87,8 @@ require("lazy").setup({
     },
 
     keys = {
-      { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = "Find Files" },
-      { '<leader>fb', '<cmd>Telescope buffers<cr>', desc = "Switch Buffer"},
+      { '<leader>pf', '<cmd>Telescope find_files<cr>', desc = "Find Files" },
+      { '<leader>bf', '<cmd>Telescope buffers<cr>', desc = "Switch Buffer"},
       { '<leader>fg', '<cmd>Telescope live_grep<cr>', desc = "Find in Files"},
     },
     
