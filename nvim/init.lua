@@ -157,7 +157,7 @@ require("lazy").setup({
       }
     },
     keys = {
-      { '<leader>xg', '<cmd>Neogit<CR>', desc='NeoGit' }
+      { '<leader>gg', '<cmd>Neogit<CR>', desc='NeoGit' }
     }
   },
   {
