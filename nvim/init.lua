@@ -21,33 +21,31 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- main colorscheme
   {
-    "scottmckendry/cyberdream.nvim",
+    "NTBBloodbath/doom-one.nvim",
     dependencies = {
       {"nvim-lualine/lualine.nvim"},
     },
     lazy = false,
-    priority = 1000,
+    init = function()
+      vim.g.doom_one_cursor_coloring = false
+      vim.g.doom_one_terminal_colors = true
+      vim.g.doom_one_enable_treesitter = true
+      vim.g.doom_one_diagnostics_text_color = false
+      vim.g.doom_one_transparent_background = false
+      vim.g.doom_one_plugin_gitsigns = true
+      vim.g.doom_one_plugin_neogit = true
+      vim.g.doom_one_plugin_telescope = true
+      vim.g.doom_one_plugin_whichkey = true
+    end,
     config = function()
-      require("cyberdream").setup({
-        transparent = true,
-        italic_comments = true,
-        hide_fillchars = true,
-        borderless_telescope = false,
-        terminal_colors = true,
-      })
-      local cyberdream = require("lualine.themes.cyberdream")
+      vim.cmd("colorscheme doom-one")
       require("lualine").setup({
         dependencies = {
           'kyazdani42/nvim-web-devicons',
         },
-        options = {
-          theme = "cyberdream",
-        },
       })
-        vim.cmd("colorscheme cyberdream")
     end,
   },
-
   -- essentials
   'editorconfig/editorconfig-vim',
 
