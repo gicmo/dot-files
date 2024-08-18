@@ -199,9 +199,12 @@ require("lazy").setup({
   },
   {
     'hrsh7th/nvim-cmp',
+    event = { "InsertEnter", "CmdlineEnter" },
     version = false,
     dependencies = {
+      "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-nvim-lsp-signature-help",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "onsails/lspkind.nvim",
@@ -211,52 +214,35 @@ require("lazy").setup({
       local cmp = require 'cmp'
       local lspkind = require("lspkind")
       return {
-        mapping = {
+        mapping = cmp.mapping.preset.insert({
           ['<Up>'] = cmp.mapping.select_prev_item(select_opts),
           ['<Down>'] = cmp.mapping.select_next_item(select_opts),
-          ['<C-p>'] = cmp.mapping.select_prev_item(),
-          ['<C-n>'] = cmp.mapping.select_next_item(),
 
           ['<C-d>'] = cmp.mapping.scroll_docs(-4),
           ['<C-f>'] = cmp.mapping.scroll_docs(4),
           ['<C-Space>'] = cmp.mapping.complete(),
           ['<C-e>'] = cmp.mapping.close(),
-          ['<CR>'] = cmp.mapping.confirm {
+          ['<CR>'] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-          },
-          ['<Tab>'] = function(fallback)
-            if cmp.visible() then
-              cmp.select_next_item()
-            else
-              fallback()
-            end
-          end,
-          ['<S-Tab>'] = function(fallback)
-            if cmp.visible() then
-              cmp.select_prev_item()
-            else
-              fallback()
-            end
-          end,
-        },
-        window = {
-          documentation = cmp.config.window.bordered()
-        },
+          }),
+        }),
         formatting = {
           format = lspkind.cmp_format({
-                    maxwidth = 50,
-                    ellipsis_char = "...",
+            mode = 'symbol',
+            maxwidth = 50,
+            ellipsis_char = '…',
           }),
         },
         snippet = {
           expand = function(args)
-            require('luasnip').lsp_expand(args.body)
+            vim.snippet.expand(args.body)
           end
         },
         sources = {
           { name = 'nvim_lsp' },
-          { name = 'buffer' },
+          { name = "nvim_lsp_signature_help" },
+          { name = "nvim_lua" },
+          { name = 'buffer', keyword_length = 5 },
         },
         window = {
           documentation = cmp.config.window.bordered(),
@@ -264,6 +250,10 @@ require("lazy").setup({
             winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
           }),
           scrollbar = false,
+        },
+        experimental = {
+          native_window = false,
+          ghost_text = true,
         },
       }
     end
