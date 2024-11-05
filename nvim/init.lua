@@ -48,6 +48,7 @@ require("lazy").setup({
   },
   -- essentials
   'editorconfig/editorconfig-vim',
+  'ntpeters/vim-better-whitespace',
 
   -- navigation
   'tpope/vim-rsi',
