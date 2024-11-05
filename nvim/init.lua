@@ -57,12 +57,11 @@ require("lazy").setup({
   {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
-    dependencies = { 
+    dependencies = {
       {'nvim-telescope/telescope-fzy-native.nvim'},
       {'nvim-lua/plenary.nvim'},
       {'kyazdani42/nvim-web-devicons'}
     },
-    
     opts = {
       defaults = {
         prompt_prefix = "→ ",
@@ -176,7 +175,7 @@ require("lazy").setup({
   {
     'sindrets/diffview.nvim',
     dependencies = {
-      'nvim-lua/plenary.nvim'  
+      'nvim-lua/plenary.nvim'
     },
   },
 
@@ -212,7 +211,7 @@ require("lazy").setup({
       "onsails/lspkind.nvim",
       "saadparwaiz1/cmp_luasnip",
     },
-    opts = function() 
+    opts = function()
       local cmp = require 'cmp'
       local lspkind = require("lspkind")
       return {
@@ -294,11 +293,11 @@ require("lazy").setup({
         map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
         map('n', '<leader>F', '<cmd>lua vim.lsp.buf.formatting()<CR>')
 
-      end 
+      end
     },
 
     config = function(_, opts)
-      local signs = { Error = "", Warn = "", Hint = "󰌶", Info = "󰋽" } 
+      local signs = { Error = "", Warn = "", Hint = "󰌶", Info = "󰋽" }
       for type, icon in pairs(signs) do
         local hl = "DiagnosticSign" .. type
         vim.fn.sign_define(hl, { text = icon, texthl= hl, numhl = hl })
@@ -338,13 +337,13 @@ require("lazy").setup({
     { '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>' },
     { '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>' },
     { ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>' },
-    { '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>' },  
+    { '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>' },
   },
 
   -- treesitter
   {
     'nvim-treesitter/nvim-treesitter',
-    version = false, 
+    version = false,
     build = ":TSUpdate",
     event = { "BufReadPost", "BufNewFile" },
     dependencies = {
@@ -403,12 +402,11 @@ require("lazy").setup({
     'MeanderingProgrammer/markdown.nvim',
     main = "render-markdown",
     opts = {},
-    dependencies = { 
+    dependencies = {
       'nvim-treesitter/nvim-treesitter',
-      'echasnovski/mini.icons' 
+      'echasnovski/mini.icons'
     },
-  }
-
+  },
 })
 
 vim.o.encoding = "utf-8"
@@ -434,7 +432,6 @@ vim.o.showmatch = true
 vim.o.signcolumn = "yes"
 vim.o.termguicolors = true
 vim.o.wrap = false
-
 
 -- indenting
 vim.o.expandtab = true
