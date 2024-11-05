@@ -91,7 +91,16 @@ require("lazy").setup({
       { '<leader>bf', '<cmd>Telescope buffers<cr>', desc = "Switch Buffer"},
       { '<leader>fg', '<cmd>Telescope live_grep<cr>', desc = "Find in Files"},
     },
-    
+  },
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    },
   },
 
   -- git
