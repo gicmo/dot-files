@@ -143,6 +143,7 @@ require("lazy").setup({
     },
     opts = {
       disable_hint = true,
+      graph_style = "kitty",
       kind = "replace",
       commit_popup = {
         kind = "vsplit",
