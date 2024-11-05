@@ -94,6 +94,11 @@ require("lazy").setup({
   },
 
   {
+    "nvim-treesitter/nvim-treesitter-context",
+    opts = { max_lines = 1 },
+  },
+
+  {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
     dependencies = {
