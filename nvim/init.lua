@@ -195,89 +195,42 @@ require("lazy").setup({
 
   -- autocomplete and snippets
   {
-    "L3MON4D3/LuaSnip",
+    'saghen/blink.cmp',
+    version = 'v0.11.0',
+
+    ---@module 'blink.cmp'
+    ---@type blink.cmp.Config
     opts = {
-      history = true,
-      delete_check_events = "TextChanged",
-    },
-    keys = {
-      {
-        "<tab>",
-        function()
-          return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
-        end,
-        expr = true, silent = true, mode = "i",
+      -- 'default' for mappings similar to built-in completion
+      -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
+      -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
+      -- See the full "keymap" documentation for information on defining your own keymap.
+      keymap = { preset = 'default' },
+
+      appearance = {
+        -- Sets the fallback highlight groups to nvim-cmp's highlight groups
+        -- Useful for when your theme doesn't support blink.cmp
+        -- Will be removed in a future release
+        use_nvim_cmp_as_default = true,
+        -- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+        -- Adjusts spacing to ensure icons are aligned
+        nerd_font_variant = 'mono'
       },
-      { "<tab>", function() require("luasnip").jump(1) end, mode = "s" },
-      { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
+
+      -- Default list of enabled providers defined so that you can extend it
+      -- elsewhere in your config, without redefining it, due to `opts_extend`
+      sources = {
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
+      },
     },
-  },
-  {
-    'hrsh7th/nvim-cmp',
-    event = { "InsertEnter", "CmdlineEnter" },
-    version = false,
-    dependencies = {
-      "hrsh7th/cmp-nvim-lua",
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-nvim-lsp-signature-help",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "onsails/lspkind.nvim",
-      "saadparwaiz1/cmp_luasnip",
-    },
-    opts = function()
-      local cmp = require 'cmp'
-      local lspkind = require("lspkind")
-      return {
-        mapping = cmp.mapping.preset.insert({
-          ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-f>'] = cmp.mapping.scroll_docs(4),
-          ['<C-Space>'] = cmp.mapping.complete(),
-          ['<C-e>'] = cmp.mapping.close(),
-          ['<CR>'] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
-          }),
-        }),
-        formatting = {
-          format = lspkind.cmp_format({
-            mode = 'symbol',
-            maxwidth = 50,
-            ellipsis_char = '…',
-          }),
-        },
-        snippet = {
-          expand = function(args)
-            vim.snippet.expand(args.body)
-          end
-        },
-        sources = {
-          { name = 'nvim_lsp' },
-          { name = "nvim_lsp_signature_help" },
-          { name = "nvim_lua" },
-          { name = 'buffer', keyword_length = 5 },
-        },
-        window = {
-          documentation = cmp.config.window.bordered(),
-          completion = cmp.config.window.bordered({
-            winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
-          }),
-          scrollbar = false,
-        },
-        experimental = {
-          native_window = false,
-          ghost_text = true,
-        },
-      }
-    end
+    opts_extend = { "sources.default" }
   },
 
   -- LSP
   {
     "neovim/nvim-lspconfig",
+    dependencies = { 'saghen/blink.cmp' },
     event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-    },
 
     opts = {
       on_attach = function(bufnr)
@@ -314,7 +267,8 @@ require("lazy").setup({
         vim.fn.sign_define(hl, { text = icon, texthl= hl, numhl = hl })
       end
 
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+      local capabilities = require('blink.cmp').get_lsp_capabilities()
       local lspconfig = require('lspconfig')
 
       local servers = { 'gopls', 'pyright', 'sourcekit' }
