@@ -55,42 +55,29 @@ require("lazy").setup({
   'tpope/vim-vinegar',
 
   {
-    'nvim-telescope/telescope.nvim',
-    branch = '0.1.x',
-    dependencies = {
-      {'nvim-telescope/telescope-fzy-native.nvim'},
-      {'nvim-lua/plenary.nvim'},
-      {'kyazdani42/nvim-web-devicons'}
-    },
+    "folke/snacks.nvim",
+    ---@type snacks.Config
     opts = {
-      defaults = {
-        prompt_prefix = "→ ",
-        selection_caret = "→ ",
-        selection_strategy = "reset",
-        sorting_strategy = "ascending",
-        scroll_strategy = "cycle",
-        color_devicons = true,
-        winblend = 0
-      },
-
-      extensions = {
-        fzy_native = {
-          override_file_sorter = true,
-          override_generic_sorter = true,
-        },
-
-        fzf_writer = {
-          use_highlighter = false,
-          minimum_grep_characters = 6,
-        }
-      },
+      explorer = {},
+      picker = {},
+      quickfile = {},
     },
-
     keys = {
-      { '<leader>pf', '<cmd>Telescope find_files<cr>', desc = "Find Files" },
-      { '<leader>bf', '<cmd>Telescope buffers<cr>', desc = "Switch Buffer"},
-      { '<leader>fg', '<cmd>Telescope live_grep<cr>', desc = "Find in Files"},
-    },
+      { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
+      { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
+      { "<leader>fs", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+      { "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects" },
+      { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
+
+      { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
+      { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
+      { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
+      { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
+      { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
+
+      { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
+      { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
+    }
   },
 
   {
@@ -243,8 +230,8 @@ require("lazy").setup({
         vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
         -- Mappings
-        map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
-        map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
+        -- map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
+        -- map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
         map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
         map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
         map('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
@@ -254,7 +241,7 @@ require("lazy").setup({
         map('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
         map('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
         map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
-        map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
+        -- map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
         map('n', '<leader>F', '<cmd>lua vim.lsp.buf.formatting()<CR>')
 
       end
