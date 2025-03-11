@@ -1,0 +1,6 @@
+font-family = BerkeleyMono Nerd Font Mono
+font-size = 12
+font-thicken = true
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+mouse-hide-while-typing = true
+theme = doom1ck
