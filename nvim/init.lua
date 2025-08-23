@@ -66,9 +66,10 @@ require("lazy").setup({
 
     ---@type snacks.Config
     opts = {
-      explorer = {},
-      picker = {},
-      quickfile = {},
+      bufdelete = { enabled = true },
+      explorer = { enabled = true },
+      picker = { enabled = true },
+      quickfile = { enabled = true },
     },
     keys = {
       { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
@@ -79,10 +80,16 @@ require("lazy").setup({
 
       { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
       { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
-      { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
-      { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
       { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
+      { "gA", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
+      { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
+      { "gs", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
+      { "gS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
 
+      { "cd", function() vim.lsp.buf.rename() end, desc = "Change Definition" },
+      { "gh", function() vim.diagnostic.open_float() end, desc = "Show error" },
+
+      { "<leader>sg", function() Snacks.picker.grep() end, desc = "Grep" },
       { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
       { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
     }
@@ -238,8 +245,6 @@ require("lazy").setup({
         vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
         -- Mappings
-        -- map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
-        -- map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
         map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
         map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
         map('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
@@ -249,7 +254,6 @@ require("lazy").setup({
         map('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
         map('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
         map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
-        -- map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
         map('n', '<leader>F', '<cmd>lua vim.lsp.buf.formatting()<CR>')
 
       end
@@ -367,6 +371,7 @@ require("lazy").setup({
       'echasnovski/mini.icons'
     },
   },
+
 })
 
 vim.o.clipboard = "unnamedplus"
