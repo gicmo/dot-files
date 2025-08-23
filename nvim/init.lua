@@ -270,7 +270,7 @@ require("lazy").setup({
       local capabilities = require('blink.cmp').get_lsp_capabilities()
       local lspconfig = require('lspconfig')
 
-      local servers = { 'gopls', 'pyright', 'sourcekit' }
+      local servers = { 'gopls', 'jsonls', 'pyright', 'sourcekit' }
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup {
           on_attach = on_attach,
