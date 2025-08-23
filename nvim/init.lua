@@ -198,7 +198,7 @@ require("lazy").setup({
   -- autocomplete and snippets
   {
     'saghen/blink.cmp',
-    version = 'v0.11.0',
+    version = '1.*',
 
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
