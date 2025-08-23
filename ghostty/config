@@ -1,6 +1,11 @@
-font-family = BerkeleyMono Nerd Font Mono
+font-family = Berkeley Mono
 font-size = 12
 font-thicken = true
 keybind = global:cmd+grave_accent=toggle_quick_terminal
 mouse-hide-while-typing = true
 theme = doom1ck
+macos-icon = custom-style
+macos-icon-screen-color = #282c34
+macos-icon-ghost-color = #bbc2cf
+macos-icon-frame = beige
+keybind = shift+enter=text:\n
