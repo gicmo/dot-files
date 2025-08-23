@@ -49,6 +49,11 @@ require("lazy").setup({
   -- essentials
   'editorconfig/editorconfig-vim',
   'ntpeters/vim-better-whitespace',
+  {
+    'mcauley-penney/visual-whitespace.nvim',
+    config = true,
+    keys = { 'v', 'V', '<C-v>' },
+  },
 
   -- navigation
   'tpope/vim-rsi',
