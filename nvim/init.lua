@@ -233,68 +233,6 @@ require("lazy").setup({
     "neovim/nvim-lspconfig",
     dependencies = { 'saghen/blink.cmp' },
     event = { "BufReadPre", "BufNewFile" },
-
-    opts = {
-      on_attach = function(bufnr)
-        local function map(mode, lhs, rhs, opts)
-          opts = vim.tbl_extend('force', {noremap = true, silent = true}, opts or {})
-          vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts)
-        end
-
-        -- Enable completion triggered by <c-x><c-o>
-        vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-        -- Mappings
-        map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
-        map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
-        map('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
-        map('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>')
-        map('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>')
-        map('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>')
-        map('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
-        map('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
-        map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
-        map('n', '<leader>F', '<cmd>lua vim.lsp.buf.formatting()<CR>')
-
-      end
-    },
-
-    config = function(_, opts)
-      local signs = { Error = "", Warn = "", Hint = "󰌶", Info = "󰋽" }
-      for type, icon in pairs(signs) do
-        local hl = "DiagnosticSign" .. type
-        vim.fn.sign_define(hl, { text = icon, texthl= hl, numhl = hl })
-      end
-
-
-      local capabilities = require('blink.cmp').get_lsp_capabilities()
-      local lspconfig = require('lspconfig')
-
-      local servers = { 'gopls', 'jsonls', 'pyright', 'sourcekit' }
-      for _, lsp in ipairs(servers) do
-        lspconfig[lsp].setup {
-          on_attach = on_attach,
-          capabilities = capabilities,
-        }
-      end
-
-      lspconfig.sourcekit.setup {
-        filetypes = { 'swift', 'c', 'cpp', 'objective-c', 'objc', 'objective-cpp' },
-        on_init = function(client, initialization_result)
-          if client.server_capabilities then
-            client.server_capabilities.semanticTokensProvider = nil
-          end
-        end,
-        get_language_id = function(_, ftype)
-          if ftype == "objc" then
-            return "objective-c"
-          elseif ftype == "objcpp" then
-            return "objective-cpp"
-          end
-          return ftype
-        end,
-      }
-    end
   },
 
   keys = {
@@ -373,6 +311,28 @@ require("lazy").setup({
   },
 
 })
+
+-- load LSP config
+require("lsp")
+
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = "●", -- Use a subtle prefix (e.g., ●, ◇, ⚠)
+    spacing = 2,  -- Add spacing between text and diagnostic
+  },
+  -- signs = true,
+  underline = false,
+  update_in_insert = false,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "",
+      [vim.diagnostic.severity.WARN] = "",
+      [vim.diagnostic.severity.INFO] = "",
+      [vim.diagnostic.severity.HINT] = "",
+    },
+  },
+})
+
 
 vim.o.clipboard = "unnamedplus"
 
