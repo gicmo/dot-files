@@ -80,16 +80,6 @@
 	smtpServer = "/usr/bin/msmtp"
 	smtpServerOption = "--read-envelope-from"
 
-[sendemail "redhat"]
-	from = Christian Kellner <ckellner@redhat.com>
-
-[imap]
-    folder = "Drafts"
-    host = imaps://imap.fastmail.com
-    user = christian@kellner.me
-    port = 993
-    sslverify = false
-
 [difftool "ksdiff"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 
