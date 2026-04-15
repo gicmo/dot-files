@@ -6,6 +6,9 @@
 [user "redhat"]
       email = ckellner@redhat.com
 
+[column]
+        ui = auto
+
 [core]
     excludesfile = ~/.gitignglb
 
