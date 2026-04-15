@@ -22,6 +22,7 @@
     untracked = magenta
 
 [alias]
+    br = branch -v
 	d = diff --color-word
 	ll = log --stat --abbrev-commit
 	ls = log --oneline --graph --all --decorate --abbrev-commit
