@@ -34,27 +34,39 @@
 
 [commit]
 	verbose = true
+	gpgsign = true
+
+
+[init]
+    defaultBranch = main
 
 [pull]
 	rebase = true
 
 [push]
-	default = simple
+    autoSetupRemote = true
+    default = simple
 
 [diff]
+    algorithm = histogram
 	colorMoved = default
 	colorMovedWs = ignore-all-space
 	mnemonicprefix = true
 	compactionHeuristic = true
+    renames = true
 
 [rebase]
 	autostash = true
 	autosquash = true
+    updateRefs = true
 
 [status]
     branch = true
     short = true
     showUntrackedFiles = no
+
+[tag]
+    sort = version:refname
 
 [filter "media"]
 	clean = git-media-clean %f
