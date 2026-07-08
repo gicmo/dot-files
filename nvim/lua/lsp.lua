@@ -14,8 +14,6 @@ for name, executable in pairs(servers) do
     end
 end
 
-vim.lsp.enable(servers)
-
 -- Setup key mapping
 vim.lsp.config("*", {
   on_attach = function(client, bufnr)
