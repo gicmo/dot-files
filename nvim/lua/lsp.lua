@@ -37,7 +37,7 @@ vim.lsp.config("*", {
     map('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
     map('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
     map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
-    map('n', '<leader>F', '<cmd>lua vim.lsp.buf.formatting()<CR>')
+    map('n', '<leader>F', '<cmd>lua vim.lsp.buf.format()<CR>')
   end
 
 })
