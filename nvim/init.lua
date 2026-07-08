@@ -235,13 +235,6 @@ require("lazy").setup({
     event = { "BufReadPre", "BufNewFile" },
   },
 
-  keys = {
-    { '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>' },
-    { '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>' },
-    { ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>' },
-    { '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>' },
-  },
-
   -- treesitter
   {
     'nvim-treesitter/nvim-treesitter',
@@ -329,6 +322,11 @@ vim.diagnostic.config({
     },
   },
 })
+
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Show diagnostics" })
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Next diagnostic" })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Diagnostics to loclist" })
 
 
 vim.o.clipboard = "unnamedplus"
