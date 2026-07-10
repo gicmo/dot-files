@@ -1,5 +1,4 @@
--- General LPS configuration
-require("lspconfig")
+-- General LSP configuration
 
 local servers = {
   gopls = 'gopls',
@@ -14,28 +13,24 @@ for name, executable in pairs(servers) do
     end
 end
 
--- Setup key mapping
+-- Shared config: buffer-local key mappings on attach
 vim.lsp.config("*", {
-  on_attach = function(client, bufnr)
-    local function map(mode, lhs, rhs, opts)
-      opts = vim.tbl_extend('force', {noremap = true, silent = true}, opts or {})
-      vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts)
+  on_attach = function(_, bufnr)
+    local function map(lhs, rhs, desc)
+      vim.keymap.set('n', lhs, rhs, { buffer = bufnr, silent = true, desc = desc })
     end
 
-    -- Enable completion triggered by <c-x><c-o>
-    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-    -- Mappings
-    map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
-    map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
-    map('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
-    map('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>')
-    map('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>')
-    map('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>')
-    map('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
-    map('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
-    map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
-    map('n', '<leader>F', '<cmd>lua vim.lsp.buf.format()<CR>')
+    map('K', vim.lsp.buf.hover, 'Hover')
+    map('gi', vim.lsp.buf.implementation, 'Goto Implementation')
+    map('<C-k>', vim.lsp.buf.signature_help, 'Signature Help')
+    map('<leader>wa', vim.lsp.buf.add_workspace_folder, 'Add Workspace Folder')
+    map('<leader>wr', vim.lsp.buf.remove_workspace_folder, 'Remove Workspace Folder')
+    map('<leader>wl', function()
+      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, 'List Workspace Folders')
+    map('<leader>D', vim.lsp.buf.type_definition, 'Type Definition')
+    map('<leader>rn', vim.lsp.buf.rename, 'Rename')
+    map('<leader>ca', vim.lsp.buf.code_action, 'Code Action')
+    map('<leader>F', function() vim.lsp.buf.format({ async = true }) end, 'Format')
   end
-
 })
