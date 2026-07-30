@@ -1,0 +1,15 @@
+[user]
+    name = Christian Kellner
+    email = christian@kellner.me
+
+[gpg]
+    format = openpgp
+
+[user]
+    signingkey = 68BBE0E2842C388B6B6714A964E876E00BC901FF
+
+[commit]
+    gpgsign = false
+
+[tag]
+    gpgsign = false

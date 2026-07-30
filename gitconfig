@@ -1,10 +1,6 @@
 [user]
 	name = Christian Kellner
 	email = christian@kellner.me
-	SigningKey = 64E876E00BC901FF
-
-[user "redhat"]
-      email = ckellner@redhat.com
 
 [column]
         ui = auto
@@ -76,14 +72,6 @@
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 
-[sendmail]
-	annotate = true
-	multiEdit = true
-	confirm = auto
-	from = Christian Kellner <christian@kellner.me>
-	smtpServer = "/usr/bin/msmtp"
-	smtpServerOption = "--read-envelope-from"
-
 [difftool "ksdiff"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 
@@ -116,4 +104,10 @@
 	user = gicmo
 
 [gitlab "gitlab.gnome.org/api/v4"]
-	user = gicmo
+    user = gicmo
+
+[include]
+    path = ~/.config/git/work.secret
+
+[includeIf "gitdir:~/.homesick/repos/"]
+    path = ~/.config/git/personal
