@@ -321,6 +321,11 @@ vim.o.encoding = "utf-8"
 -- buffers where spell is correctly scoped (treesitter @spell, or prose)
 vim.o.spell = true
 vim.o.spelloptions = 'camel,noplainbuffer'
+
+-- treesitter folds; foldexpr returns '0' for buffers without a parser
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.o.foldlevelstart = 99
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.undofile = true
